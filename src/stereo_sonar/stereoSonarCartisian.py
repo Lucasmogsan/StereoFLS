@@ -14,7 +14,7 @@ from message_filters import ApproximateTimeSynchronizer, Subscriber
 from scipy.interpolate import interp1d
 from sensor_msgs.msg import PointCloud2, PointField, Image
 from sklearn.utils import shuffle
-from sonar_oculus.msg import OculusPing
+from stereo_sonar.msg import OculusPing
 from std_msgs.msg import Header
 
 from stereo_sonar.CFAR import *
