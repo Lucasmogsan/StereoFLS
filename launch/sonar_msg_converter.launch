@@ -1,0 +1,4 @@
+<launch>
+    <node pkg="stereo_sonar" name="sonar_msg_converter" type="sonar_msg_converter_node.py" output="screen">
+    </node>
+</launch>

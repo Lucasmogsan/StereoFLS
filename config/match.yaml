@@ -2,11 +2,11 @@
 horizontalFOV: 130.0
 transformation: 0.1
 verticalAperture: 20.0
-horizontalTopic: "/sonar_oculus_node/M750d/ping"
-verticalTopic: "/sonar_oculus_node/M1200d/ping"
+horizontalTopic: "/oculus_m750d/sonar_new/ping"
+verticalTopic: "/blueview_p900/sonar_new/ping"
 
 #define which implmentation we want to match the features
-method: cpp # options are cpp or python
+method: python # options are cpp or python
 
 #do we want to see the feature images from CFAR? turn on to publish
 visFeatures: True

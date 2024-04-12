@@ -7,6 +7,8 @@ find_package(Eigen3 REQUIRED)
 find_package(catkin REQUIRED COMPONENTS
   pybind11_catkin
   rospy
+  sensor_msgs
+  message_generation
 )
 
 include_directories(
@@ -14,8 +16,23 @@ include_directories(
   ${EIGEN3_INCLUDE_DIRS}
 )
 
-catkin_package(DEPENDS EIGEN3)
 catkin_python_setup()
+
+add_message_files(
+   FILES
+   OculusFire.msg
+   OculusPing.msg
+)
+
+generate_messages(
+  DEPENDENCIES
+  sensor_msgs
+)
+
+catkin_package(
+  CATKIN_DEPENDS message_runtime roscpp sensor_msgs
+  DEPENDS EIGEN3
+)
 
 pybind11_add_module(cfar src/${PROJECT_NAME}/cpp/cfar.cpp)
 set_target_properties(cfar PROPERTIES LIBRARY_OUTPUT_DIRECTORY
